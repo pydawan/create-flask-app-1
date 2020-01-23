@@ -1,6 +1,6 @@
 # Create Flask App
 
-![GitHub](https://img.shields.io/github/license/marcusmann/create-flask-app)
+![GitHub](https://img.shields.io/github/license/marcusmann/create-flask-app) ![GitHub top language](https://img.shields.io/github/languages/top/marcusmann/create-flask-app)
 
 **Create Flask App** is a cli-applcation for build apps flask.
 
