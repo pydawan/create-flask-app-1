@@ -4,6 +4,12 @@
 
 **Create Flask App** is a cli-applcation for build apps flask.
 
+
+## Desmostration
+
+[![asciicast](https://asciinema.org/a/OTf4VOrnESrVycyW6OAUkxuMS.svg)](https://asciinema.org/a/OTf4VOrnESrVycyW6OAUkxuMS)
+
+
 ## Install
 
 If you want to see it in a more cute way, you can simply access our doc via [html](https://create-flask.spacedevs.com.br/).
@@ -37,5 +43,3 @@ On Windows
 ```
 create-flask-app.exe myProjectName
 ```
-
-## Desmostration
