@@ -4,8 +4,10 @@
 
 **Create Flask App** is a cli-applcation for build apps flask.
 
+Documentation => https://create-flask.spacedevs.com.br/
 
-## Desmostration
+## Demonstration
+
 
 [![asciicast](https://asciinema.org/a/OTf4VOrnESrVycyW6OAUkxuMS.svg)](https://asciinema.org/a/OTf4VOrnESrVycyW6OAUkxuMS)
 
