@@ -31,7 +31,9 @@ func installPythonDeps(currentPath, projectName string) {
 	if out, err := c.Output(); err != nil {
 		log.Fatalln(err)
 	} else {
-		fmt.Println("Installing Dependencies")
+		notifications.Welcome()
+
+		fmt.Println("\n\nInstalling Dependencies")
 
 		count := len(out)
 
