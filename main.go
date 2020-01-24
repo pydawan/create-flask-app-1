@@ -4,6 +4,8 @@ import (
 	"log"
 	"os"
 	"path"
+
+	"github.com/create-flask-app/src"
 )
 
 func getCurrentDir() string {
@@ -15,11 +17,12 @@ func getCurrentDir() string {
 
 	return currentDir
 }
+
 func main() {
-	folderName := os.Args[1]
-	currentDir := src.GetCurrentDir()
-	projectPath := path.Join(currentDir, folderName)
+	projectName := os.Args[1]
+
+	projectPath := path.Join(getCurrentDir(), projectName)
 
 	src.CloneRepo(projectPath)
-
+	src.CreatePythonVenv(projectPath, projectName)
 }
