@@ -23,8 +23,7 @@ func GetCurrentDir() string {
 // CloneRepo function clone repository from github
 func CloneRepo(currentPath string) {
 	_, err := git.PlainClone(currentPath, false, &git.CloneOptions{
-		URL:      repoURL,
-		Progress: os.Stdout,
+		URL: repoURL,
 	})
 
 	if err != nil {
