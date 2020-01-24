@@ -1,3 +1,1 @@
-*.exe
-create-flask-app-386
-create-flask-app-amd64
+build/
