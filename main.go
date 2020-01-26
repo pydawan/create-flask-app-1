@@ -36,7 +36,7 @@ func main() {
 
 func setRepo(template bool) string {
 	if template {
-		return "https://storage.googleapis.com/spacedevs_storage_intervalo_1/repos/flask_template_mvc-master.zip"
+		return "https://github.com/spadevs/flask_template_mvc/archive/master.zip"
 	}
-	return "https://storage.googleapis.com/spacedevs_storage_intervalo_1/repos/flask_minimal-master.zip"
+	return "https://github.com/spadevs/flask_minimal/archive/master.zip"
 }
