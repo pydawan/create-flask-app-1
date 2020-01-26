@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"log"
 	"os"
 	"path"
@@ -19,10 +20,23 @@ func getCurrentDir() string {
 }
 
 func main() {
-	projectName := os.Args[1]
+	var name string
+	var template bool
 
-	projectPath := path.Join(getCurrentDir(), projectName)
+	flag.StringVar(&name, "name", "", "set the project name")
+	flag.BoolVar(&template, "mvc", false, "use for download mvc template")
 
-	src.CloneRepo(projectPath)
-	src.CreatePythonVenv(projectPath, projectName)
+	flag.Parse()
+
+	currentPath := path.Join(getCurrentDir(), name)
+
+	src.Download(setRepo(template), getCurrentDir(), name)
+	src.CreatePythonVenv(currentPath, name)
+}
+
+func setRepo(template bool) string {
+	if template {
+		return "https://storage.googleapis.com/spacedevs_storage_intervalo_1/repos/flask_template_mvc-master.zip"
+	}
+	return "https://storage.googleapis.com/spacedevs_storage_intervalo_1/repos/flask_minimal-master.zip"
 }
