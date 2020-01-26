@@ -4,15 +4,21 @@ import (
 	"fmt"
 	"log"
 	"os/exec"
+	"runtime"
 	"time"
 
+	"github.com/MarcusMann/create-flask-app/notifications"
 	"github.com/cheggaaa/pb"
-	"github.com/create-flask-app/notifications"
 )
 
 // CreatePythonVenv create a venv for python using python -m venv
 func CreatePythonVenv(currentPath, projectName string) {
 	cmd := exec.Command("python3", "-m", "venv", "venv")
+
+	if runtime.GOOS == "windows" {
+		cmd = exec.Command("python", "-m", "venv", "venv")
+	}
+
 	cmd.Dir = currentPath
 
 	if _, err := cmd.Output(); err != nil {
@@ -24,6 +30,10 @@ func CreatePythonVenv(currentPath, projectName string) {
 
 func installPythonDeps(currentPath, projectName string) {
 	pipCmd := currentPath + "/venv/bin/pip"
+
+	if runtime.GOOS == "windows" {
+		pipCmd = currentPath + "/venv/Scripts/pip"
+	}
 
 	c := exec.Command(pipCmd, "install", "-r", "requirements.txt")
 	c.Dir = currentPath
