@@ -6,7 +6,7 @@ import (
 	"os"
 	"path"
 
-	"github.com/create-flask-app/src"
+	"github.com/MarcusMann/create-flask-app/src"
 )
 
 func getCurrentDir() string {
