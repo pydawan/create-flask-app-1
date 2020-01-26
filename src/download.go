@@ -27,6 +27,12 @@ func Download(templateURL, currentPath, projectName string) {
 
 	// extract a zip file
 	extractRepo(zipFileName, currentPath, projectName)
+
+	errF := os.Remove(zipFileName)
+
+	if errF != nil {
+		log.Fatalf("\nerror: %s", errF)
+	}
 }
 
 func createZipFile(fileName string, body io.ReadCloser) {
