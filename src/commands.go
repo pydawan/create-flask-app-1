@@ -13,10 +13,10 @@ import (
 
 // CreatePythonVenv create a venv for python using python -m venv
 func CreatePythonVenv(currentPath, projectName string) {
-	cmd := exec.Command("python3", "-m", "venv", "venv")
+	cmd := exec.Command("python3", "-m", "venv", ".venv")
 
 	if runtime.GOOS == "windows" {
-		cmd = exec.Command("python", "-m", "venv", "venv")
+		cmd = exec.Command("python", "-m", "venv", ".venv")
 	}
 
 	cmd.Dir = currentPath
@@ -29,10 +29,10 @@ func CreatePythonVenv(currentPath, projectName string) {
 }
 
 func installPythonDeps(currentPath, projectName string) {
-	pipCmd := currentPath + "/venv/bin/pip"
+	pipCmd := currentPath + "/.venv/bin/pip"
 
 	if runtime.GOOS == "windows" {
-		pipCmd = currentPath + "/venv/Scripts/pip"
+		pipCmd = currentPath + "/.venv/Scripts/pip"
 	}
 
 	c := exec.Command(pipCmd, "install", "-r", "requirements.txt")
